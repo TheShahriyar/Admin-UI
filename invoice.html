@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<title>CRM Admin</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/vendor.bundle.base.css" />
+		<link rel="stylesheet" href="css/materialdesignicons.min.css" />
+		<link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="container-scroller">
+			<!-- Start Top Nav bar -->
+			<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+				<div class="navbar-brand-wrapper d-flex justify-content-center">
+					<div
+						class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100"
+					>
+						<a class="navbar-brand brand-logo" href="index.html"
+							><img src="images/logo.svg" alt="logo"
+						/></a>
+						<a class="navbar-brand brand-logo-mini" href="index.html"
+							><img src="images/logo-mini.svg" alt="logo"
+						/></a>
+						<button
+							class="navbar-toggler navbar-toggler align-self-center"
+							type="button"
+							data-toggle="minimize"
+						>
+							<span class="mdi mdi-sort-variant"></span>
+						</button>
+					</div>
+				</div>
+				<div
+					class="navbar-menu-wrapper d-flex align-items-center justify-content-end"
+				>
+					<ul class="navbar-nav mr-lg-4 w-100">
+						<li class="nav-item nav-search d-none d-lg-block w-100">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="search">
+										<i class="mdi mdi-magnify"></i>
+									</span>
+								</div>
+								<input
+									type="text"
+									class="form-control"
+									placeholder="Search now"
+									aria-label="search"
+									aria-describedby="search"
+								/>
+							</div>
+						</li>
+					</ul>
+					<ul class="navbar-nav navbar-nav-right">
+						<li class="nav-item dropdown mr-4">
+							<a
+								class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown"
+								id="notificationDropdown"
+								href="#"
+								data-toggle="dropdown"
+							>
+								<i class="mdi mdi-bell mx-0"></i>
+								<span class="count"></span>
+							</a>
+							<div
+								class="dropdown-menu dropdown-menu-right navbar-dropdown"
+								aria-labelledby="notificationDropdown"
+							>
+								<p class="mb-0 font-weight-normal float-left dropdown-header">
+									Notifications
+								</p>
+								<a class="dropdown-item">
+									<div class="item-thumbnail">
+										<div class="item-icon bg-success">
+											<i class="mdi mdi-information mx-0"></i>
+										</div>
+									</div>
+									<div class="item-content">
+										<h6 class="font-weight-normal">Application Error</h6>
+										<p class="font-weight-light small-text mb-0 text-muted">
+											Just now
+										</p>
+									</div>
+								</a>
+								<a class="dropdown-item">
+									<div class="item-thumbnail">
+										<div class="item-icon bg-warning">
+											<i class="mdi mdi-settings mx-0"></i>
+										</div>
+									</div>
+									<div class="item-content">
+										<h6 class="font-weight-normal">Settings</h6>
+										<p class="font-weight-light small-text mb-0 text-muted">
+											Private message
+										</p>
+									</div>
+								</a>
+								<a class="dropdown-item">
+									<div class="item-thumbnail">
+										<div class="item-icon bg-info">
+											<i class="mdi mdi-account-box mx-0"></i>
+										</div>
+									</div>
+									<div class="item-content">
+										<h6 class="font-weight-normal">New user registration</h6>
+										<p class="font-weight-light small-text mb-0 text-muted">
+											2 days ago
+										</p>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item nav-profile dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								data-toggle="dropdown"
+								id="profileDropdown"
+							>
+								<img src="images/faces/face5.jpg" alt="profile" />
+								<span class="nav-profile-name">John Doe</span>
+							</a>
+							<div
+								class="dropdown-menu dropdown-menu-right navbar-dropdown"
+								aria-labelledby="profileDropdown"
+							>
+								<a class="dropdown-item">
+									<i class="mdi mdi-settings text-primary"></i>
+									Settings
+								</a>
+								<a class="dropdown-item">
+									<i class="mdi mdi-logout text-primary"></i>
+									Logout
+								</a>
+							</div>
+						</li>
+					</ul>
+					<button
+						class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+						type="button"
+						data-toggle="offcanvas"
+					>
+						<span class="mdi mdi-menu"></span>
+					</button>
+				</div>
+			</nav>
+			<!-- End Top Nav bar -->
+
+			<div class="container-fluid page-body-wrapper">
+				<!-- Start Sidebar Section -->
+				<nav class="sidebar sidebar-offcanvas" id="sidebar">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">
+								<i class="mdi mdi-home menu-icon"></i>
+								<span class="menu-title">Dashboard</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="account.html">
+								<i class="mdi mdi-currency-bdt menu-icon"></i>
+								<span class="menu-title">Accounts</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">
+								<i class="mdi mdi-contact-mail menu-icon"></i>
+								<span class="menu-title">Contact</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="leads.html">
+								<i class="mdi mdi-ski-cross-country menu-icon"></i>
+								<span class="menu-title">Leads</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="opportunity.html">
+								<i class="mdi mdi-firebase menu-icon"></i>
+								<span class="menu-title">Opportunity</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="report.html">
+								<i class="mdi mdi-file-excel menu-icon"></i>
+								<span class="menu-title">Report</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="quotes.html">
+								<i class="mdi mdi-comment-quote menu-icon"></i>
+								<span class="menu-title">Quotes</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="sales-order.html">
+								<i class="mdi mdi-tag-multiple-outline menu-icon"></i>
+								<span class="menu-title">Sales Order</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="invoice.html">
+								<i class="mdi mdi-file-table menu-icon"></i>
+								<span class="menu-title">Invoice</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="products.html">
+								<i class="mdi mdi-cards-club menu-icon"></i>
+								<span class="menu-title">Products</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="email.html">
+								<i class="mdi mdi-email menu-icon"></i>
+								<span class="menu-title">Email</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="cases.html">
+								<i class="mdi mdi-purse menu-icon"></i>
+								<span class="menu-title">Cases</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="calendar.html">
+								<i class="mdi mdi-calendar-month menu-icon"></i>
+								<span class="menu-title">Calendar</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="tasks.html">
+								<i class="mdi mdi-clipboard-list menu-icon"></i>
+								<span class="menu-title">Tasks</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="settings.html">
+								<i class="mdi mdi-settings menu-icon"></i>
+								<span class="menu-title">Settings</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<!-- End Sidebar Section -->
+
+				<!-- partial -->
+				<div class="main-panel">
+					<div class="content-wrapper">
+						<!--Start Page Header-->
+						<div class="row">
+							<div class="col-md-12 grid-margin">
+								<div class="d-flex justify-content-between flex-wrap">
+									<div class="d-flex align-items-end flex-wrap">
+										<div class="mr-md-3 mr-xl-5">
+											<h2>Invoice</h2>
+										</div>
+									</div>
+									<div
+										class="d-flex justify-content-between align-items-end flex-wrap"
+									>
+										<button
+											type="button"
+											class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block "
+										>
+											<i class="mdi mdi-download text-muted"></i>
+										</button>
+										<button
+											type="button"
+											class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0"
+										>
+											<i class="mdi mdi-printer text-muted"></i>
+										</button>
+										<button
+											type="button"
+											class="btn btn-primary btn-icon big-btn mr-3 mt-2 mt-xl-0"
+											data-toggle="modal"
+											data-target="#createAccountModal"
+										>
+											<i class="mdi mdi-plus"></i> Create Invoice
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--End Page Header-->
+
+						<!--Start Create Account Modal-->
+						<div
+							class="modal fade"
+							id="createAccountModal"
+							data-backdrop="static"
+							tabindex="-1"
+							role="dialog"
+							aria-labelledby="staticBackdropLabel"
+							aria-hidden="true"
+						>
+							<div class="modal-dialog modal-xl" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="staticBackdropLabel">
+											Create Account
+										</h5>
+										<button
+											type="button"
+											class="close"
+											data-dismiss="modal"
+											aria-label="Close"
+										>
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Name</label>
+														<div class="input-group">
+															<div class="input-group-prepend bg-transparent">
+																<span
+																	class="input-group-text bg-transparent border-right-0"
+																>
+																	<i
+																		class="mdi mdi-account-outline text-primary"
+																	></i>
+																</span>
+															</div>
+															<input
+																type="text"
+																class="form-control form-control-lg border-left-0"
+																placeholder="Name"
+															/>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Email</label>
+														<div class="input-group">
+															<div class="input-group-prepend bg-transparent">
+																<span
+																	class="input-group-text bg-transparent border-right-0"
+																>
+																	<i
+																		class="mdi mdi-email-outline text-primary"
+																	></i>
+																</span>
+															</div>
+															<input
+																type="email"
+																class="form-control form-control-lg border-left-0"
+																placeholder="Email"
+															/>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Phone</label>
+														<div class="input-group">
+															<div class="input-group-prepend bg-transparent">
+																<span
+																	class="input-group-text bg-transparent border-right-0"
+																>
+																	<i
+																		class="mdi mdi-phone-classic text-primary"
+																	></i>
+																</span>
+															</div>
+															<input
+																type="tel"
+																class="form-control form-control-lg border-left-0"
+																placeholder="Phone Number"
+															/>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Website</label>
+														<div class="input-group">
+															<div class="input-group-prepend bg-transparent">
+																<span
+																	class="input-group-text bg-transparent border-right-0"
+																>
+																	<i
+																		class="mdi mdi-google-earth text-primary"
+																	></i>
+																</span>
+															</div>
+															<input
+																type="url"
+																class="form-control form-control-lg border-left-0"
+																placeholder="Website"
+															/>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Billing Address</label>
+														<input
+															type="text"
+															class="form-control form-control-lg"
+															placeholder="Street"
+														/>
+														<div class="d-flex my-3">
+															<input
+																type="text"
+																class="form-control form-control-lg mr-3"
+																placeholder="City"
+															/>
+															<input
+																type="text"
+																class="form-control form-control-lg mr-3"
+																placeholder="State"
+															/>
+															<input
+																type="text"
+																class="form-control form-control-lg"
+																placeholder="Post Code"
+															/>
+														</div>
+														<select class="form-control form-control-lg">
+															<option>Country</option>
+															<option>United States of America</option>
+															<option>United Kingdom</option>
+															<option>India</option>
+															<option>Germany</option>
+															<option>Argentina</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Shipping Address</label>
+														<input
+															type="text"
+															class="form-control form-control-lg"
+															placeholder="Street"
+														/>
+														<div class="d-flex my-3">
+															<input
+																type="text"
+																class="form-control form-control-lg mr-3"
+																placeholder="City"
+															/>
+															<input
+																type="text"
+																class="form-control form-control-lg mr-3"
+																placeholder="State"
+															/>
+															<input
+																type="text"
+																class="form-control form-control-lg"
+																placeholder="Post Code"
+															/>
+														</div>
+														<select class="form-control form-control-lg">
+															<option>Country</option>
+															<option>United States of America</option>
+															<option>United Kingdom</option>
+															<option>India</option>
+															<option>Germany</option>
+															<option>Argentina</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>User Role</label>
+														<select class="form-control form-control-lg">
+															<option>Admin</option>
+															<option>User</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-danger btn-icon big-btn"
+											data-dismiss="modal"
+										>
+											Cancel
+										</button>
+										<button
+											type="button"
+											class="btn btn-primary btn-icon big-btn"
+										>
+											Save
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--End Create Account Modal-->
+
+						<!--Start Delete Confirmation Modal-->
+						<div
+							class="modal fade"
+							id="deleteAccountModal"
+							data-backdrop="static"
+							tabindex="-1"
+							role="dialog"
+							aria-hidden="true"
+						>
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Account Delete</h5>
+										<button
+											type="button"
+											class="close"
+											data-dismiss="modal"
+											aria-label="Close"
+										>
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<h4>Are you Sure?</h4>
+									</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-primary btn-icon big-btn"
+											data-dismiss="modal"
+										>
+											Cancel
+										</button>
+										<button
+											type="button"
+											class="btn btn-danger btn-icon big-btn"
+										>
+											Confirm
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--End Delete Confirmation Modal-->
+
+						<div class="row">
+							<div class="col-md-12 stretch-card">
+								<div class="card">
+									<div class="card-body"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- content-wrapper ends -->
+					<!-- partial:partials/_footer.html -->
+					<footer class="footer">
+						<div
+							class="d-sm-flex justify-content-center justify-content-sm-between"
+						>
+							<span
+								class="text-muted text-center text-sm-left d-block d-sm-inline-block"
+								>Copyright © 2020<a href="#" target="_blank">PineapplePremium</a
+								>. All rights reserved.</span
+							>
+							<span
+								class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"
+								>Hand-crafted & made with
+								<i class="mdi mdi-heart text-danger"></i
+							></span>
+						</div>
+					</footer>
+					<!-- partial -->
+				</div>
+				<!-- main-panel ends -->
+			</div>
+			<!-- page-body-wrapper ends -->
+		</div>
+		<!-- container-scroller -->
+
+		<!-- plugins:js -->
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- endinject -->
+		<!-- Plugin js for this page-->
+		<script src="js/jquery.dataTables.min.js"></script>
+		<script src="js/dataTables.bootstrap4.min.js"></script>
+		<!-- End plugin js for this page-->
+		<!-- inject:js -->
+		<script src="js/off-canvas.js"></script>
+		<script src="js/hoverable-collapse.js"></script>
+		<script src="js/template.js"></script>
+		<!-- endinject -->
+		<!-- Custom js for this page-->
+		<script src="js/dashboard.js"></script>
+		<!-- End custom js for this page-->
+	</body>
+</html>
